@@ -1,6 +1,8 @@
 const app = require("./app.js");
 const cloudinary = require("cloudinary");
 const connectDb = require("./config/database.js");
+const cors = require("cors");
+app.use(cors({}));
 
 // handle uncaught exception
 process.on("uncaughtException", (err) => {
@@ -17,6 +19,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 // connecting data base
 connectDb();
 
+console.log(process.env.DB_URL)
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
