@@ -4,6 +4,9 @@ const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
 const ApiFeatures = require("../utils/apifeatures");
 const cloudinary = require("cloudinary");
 
+
+// aggregate , indexing and regular expression.
+
 // create new product  -- admin
 exports.createProduct = catchAsyncErrors(async (req, res, next) => {
   let images = [];
