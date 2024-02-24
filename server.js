@@ -19,7 +19,6 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 // connecting data base
 connectDb();
 
-console.log(process.env.DB_URL)
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
