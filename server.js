@@ -5,7 +5,7 @@ const cors = require("cors");
 
 // Configure CORS to allow requests from localhost:3000
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow requests from this origin
+  origin: 'https://shop-karoo.netlify.app', // Allow requests from this origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
