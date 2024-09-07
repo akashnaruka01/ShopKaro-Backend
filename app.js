@@ -5,6 +5,20 @@ const errorMiddleware = require("./middlewares/error");
 const cookieParser = require("cookie-parser");
 const fileUpload = require("express-fileupload");
 const path = require("path");
+const cors = require("cors");
+
+app.use(cors({
+  origin: '*', // Allow only this domain
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: 'Content-Type, Authorization',
+}));
+
+app.options('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.sendStatus(200);
+});
 
 // config
 if (process.env.NODE_ENV !== "PRODUCTION") {
