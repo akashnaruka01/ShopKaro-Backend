@@ -28,7 +28,7 @@ cloudinary.config({
 });
 
 // creating server
-const Port = process.env.PORT || 5000;
+const Port = process.env.PORT;
 const server = app.listen(Port, () => {
   console.log(`server created succesfully and running on port number: ${Port}`);
 });
