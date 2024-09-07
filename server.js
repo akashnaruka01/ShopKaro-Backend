@@ -4,7 +4,11 @@ const connectDb = require("./config/database.js");
 const cors = require("cors");
 
 // Configure CORS to allow requests from localhost:3000
-app.use(cors());
+app.use(cors({
+  origin: '*', // Allow only this domain
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: 'Content-Type, Authorization',
+}));
 
 // handle uncaught exception
 process.on("uncaughtException", (err) => {
